@@ -50,15 +50,7 @@ export default function App() {
       <nav className={`fixed w-full z-50 transition-all duration-300 ${
         scrolled ? "bg-white shadow-md py-2" : "bg-transparent py-4"
       }`}>
-        <div className="max-w-7xl mx-auto px-4 flex justify-between items-center">
-          <div className="flex items-center gap-2">
-            <img 
-              src="https://i.ibb.co/4wm8t3Wv/Whats-App-Image-2026-04-29-at-09-15-59-Picsart-Background-Remover.png" 
-              alt="Diflex Logo" 
-              className="h-12 w-auto"
-            />
-          </div>
-
+        <div className="max-w-7xl mx-auto px-4 flex justify-end items-center">
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-8 text-sm font-medium uppercase tracking-wider">
             {['Home', 'Sobre', 'Produtos', 'Serviços', 'Contato'].map((item) => (
@@ -142,12 +134,18 @@ export default function App() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
+            className="flex flex-col items-center"
           >
-            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
-              DIFLEX <br />
-              <span className="text-brand-secondary">Mangueiras & Conexões</span>
-            </h1>
-            <p className="text-xl md:text-2xl mb-10 max-w-3xl mx-auto text-gray-200">
+            <img 
+              src="https://i.ibb.co/4wm8t3Wv/Whats-App-Image-2026-04-29-at-09-15-59-Picsart-Background-Remover.png" 
+              alt="Diflex Logo" 
+              className="h-40 md:h-64 w-auto mb-8 drop-shadow-[0_0_30px_rgba(255,255,255,0.3)]"
+            />
+            <h1 className="sr-only">Diflex Mangueiras & Conexões</h1>
+            <p className="text-xl md:text-3xl mb-4 max-w-3xl mx-auto text-brand-secondary uppercase tracking-[0.3em] font-black drop-shadow-sm">
+              Mangueiras & Conexões
+            </p>
+            <p className="text-lg md:text-xl mb-10 max-w-2xl mx-auto text-gray-200 leading-relaxed">
               Soluções robustas em mangueiras hidráulicas, montagem especializada e acessórios industriais de alta performance.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
