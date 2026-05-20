@@ -24,8 +24,18 @@ import {
 import { motion, AnimatePresence } from 'motion/react';
 import { PRODUCTS, PRODUCT_CATEGORIES, SERVICES, Product } from './constants';
 
-const WHATSAPP_NUMBER = "5591992699577";
-const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=Olá,%20gostaria%20de%20fazer%20um%20orçamento.`;
+const WHATSAPP_NUMBER = "559132769000";
+const WHATSAPP_LINK = `https://wa.me/${WHATSAPP_NUMBER}?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento%20na%20Diflex.`;
+
+const getProductWhatsAppLink = (productTitle: string) => {
+  const text = `Olá! Gostaria de fazer um orçamento para o produto: *${productTitle}*.`;
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+};
+
+const getServiceWhatsAppLink = (serviceTitle: string) => {
+  const text = `Olá! Gostaria de obter mais informações sobre o serviço de: *${serviceTitle}*.`;
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(text)}`;
+};
 
 export default function App() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -158,6 +168,8 @@ export default function App() {
               </a>
               <a 
                 href={WHATSAPP_LINK}
+                target="_blank"
+                rel="noreferrer"
                 className="bg-brand-secondary hover:bg-orange-600 text-white px-8 py-4 rounded-lg font-bold flex items-center justify-center gap-2 transition-all shadow-xl"
               >
                 <Phone size={20} />
@@ -238,7 +250,12 @@ export default function App() {
               <p className="text-gray-600 leading-relaxed mb-6">
                 {service.description}
               </p>
-              <a href={WHATSAPP_LINK} className="text-brand-primary font-bold inline-flex items-center gap-2 hover:gap-3 transition-all">
+              <a 
+                href={getServiceWhatsAppLink(service.title)} 
+                target="_blank"
+                rel="noreferrer"
+                className="text-brand-primary font-bold inline-flex items-center gap-2 hover:gap-3 transition-all"
+              >
                 Saiba Mais <MoveRight size={16} />
               </a>
             </motion.div>
@@ -348,7 +365,9 @@ export default function App() {
                     )}
 
                     <a 
-                      href={WHATSAPP_LINK} 
+                      href={getProductWhatsAppLink(p.title)} 
+                      target="_blank"
+                      rel="noreferrer"
                       className="w-full flex items-center justify-center gap-2 bg-brand-primary py-3 text-white font-bold rounded-lg hover:bg-blue-900 transition-all shadow-md active:scale-95"
                     >
                       <ShoppingBag size={18} />
@@ -396,8 +415,9 @@ export default function App() {
                   </div>
                   <div>
                     <h4 className="font-bold text-lg">Telefones & WhatsApp</h4>
-                    <p className="text-gray-500">(91) 99269-9577 (WhatsApp)</p>
-                    <p className="text-gray-500">(91) 3276-9000 / 3276-3084</p>
+                    <p className="text-gray-500">(91) 3276-9000 (Fixo / WhatsApp)</p>
+                    <p className="text-gray-500">(91) 99269-9577 (Celular / Alternativo)</p>
+                    <p className="text-gray-500">(91) 3276-3084</p>
                   </div>
                 </div>
 

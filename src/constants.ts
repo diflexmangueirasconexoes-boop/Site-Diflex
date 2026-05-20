@@ -410,4 +410,4 @@ export const SERVICES = [
   }
 ];
 
-export const WHATSAPP_LINK = `https://wa.me/5591992699577?text=Olá,%20gostaria%20de%20um%20orçamento%20da%20Diflex`;
+export const WHATSAPP_LINK = `https://wa.me/559132769000?text=Ol%C3%A1%2C%20gostaria%20de%20fazer%20um%20or%C3%A7amento%20na%20Diflex.`;
